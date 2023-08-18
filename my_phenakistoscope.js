@@ -1,4 +1,4 @@
-const SLICE_COUNT = 1;
+const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
     pScope.output_mode(OUTPUT_GIF(1000));
@@ -45,8 +45,8 @@ function squares(x, y, animation, pScope){
   arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
 
   fill('#ffb703');
-  rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
-//   ellipse(-10, -300,100,100);
+  // rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
+  ellipse(-10, -300-animation.wave()*50,40,40);
 //   fill(214, 91, 9);
 //   // beginShape(); // flowerpot
 //   // point(-10, -300);
