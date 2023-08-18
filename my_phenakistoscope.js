@@ -28,9 +28,9 @@ function faces(x, y, animation, pScope){
 
   ellipse(0,0,50,50); // draw head
   fill(30);
-  ellipse(-10,-10,10,10); //draw eye
-  ellipse(10,-10,10,10); // draw eye
-  arc(0,10,20,10,0,180); // draw mouth
+  // ellipse(-10,-10,10,10); //draw eye
+  // ellipse(10,-10,10,10); // draw eye
+  // arc(0,10,20,10,0,180); // draw mouth
 
 }
 
