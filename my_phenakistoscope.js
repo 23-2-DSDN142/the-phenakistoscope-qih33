@@ -21,9 +21,9 @@ function setup_layers(pScope){
   layer1.mode( SWIRL(5) );
   layer1.set_boundary( 200, 1000 );
 
-  var layer2 = new PLayer(lucky_cats);
-  layer2.mode( RING );
-  layer2.set_boundary( 0, 400 );
+  // var layer2 = new PLayer(lucky_cats);
+  // layer2.mode( RING );
+  // layer2.set_boundary( 0, 400 );
 
   var layer3 = new PLayer(coins);
    layer1.mode( SWIRL(5) );
