@@ -1,12 +1,12 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT = 8;
 
 function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode( ANIMATED_DISK);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
-  pScope.draw_slits(true);
-  // pScope.set_direction(CCW);
+  pScope.draw_slits(false);
+  pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
   pScope.load_image("luckyCat", "png");
@@ -21,11 +21,11 @@ function setup_layers(pScope){
   // layer1.mode( SWIRL(5) );
   // layer1.set_boundary( 200, 1000 );
 
-  // var layer2 = new PLayer(lucky_cats);
-  // layer2.mode( RING );
-  // layer2.set_boundary( 0, 400 );
+  var layer2 = new PLayer(lucky_cats);
+      layer2.mode( RING );
+      layer2.set_boundary( 200, 200 );
 
-  var layer3 = new PLayer(coins);
+   var layer3 = new PLayer(coins);
   //  layer1.mode( SWIRL(5) );
   // layer1.set_boundary( 200, 1000 );
 }
@@ -50,14 +50,13 @@ function lucky_cats(x, y, animation, pScope){
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-   pScope.draw_image("luckyCat" , x, y);
-
-
-  // fill('#eae2b7');
-  // arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-
+  scale(animation.wave(0.5));
+   
+  //  fill('#eae2b7');
+  //  arc(x,y,1000,1000,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+   pScope.draw_image("luckyCat" , 200, 400);
   // fill('#ffb703');
-  // // rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
+  // // // rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
   // ellipse(-10, -300-animation.wave()*50,40,40);
 
 
