@@ -8,7 +8,9 @@ function setup_pScope(pScope){
   pScope.draw_slits(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
-  pScope.load_image("heart_circle", "png");
+  pScope.load_image("coin", "png");
+  pScope.load_image("luckyCat", "png");
+
 }
 
 function setup_layers(pScope){
@@ -19,14 +21,18 @@ function setup_layers(pScope){
   layer1.mode( SWIRL(5) );
   layer1.set_boundary( 200, 1000 );
 
-  var layer2 = new PLayer(squares);
+  var layer2 = new PLayer(lucky_cats);
   layer2.mode( RING );
   layer2.set_boundary( 0, 400 );
+
+  var layer3 = new PLayer(coins);
+   layer1.mode( SWIRL(5) );
+  // layer1.set_boundary( 200, 1000 );
 }
 
 function faces(x, y, animation, pScope){
 
-  pScope.draw_image("heart_circle" , x, y);
+  // pScope.draw_image("coin" , x, y);
   
   scale(animation.frame*2);
 
@@ -38,28 +44,26 @@ function faces(x, y, animation, pScope){
 
 }
 
-function squares(x, y, animation, pScope){
+function lucky_cats(x, y, animation, pScope){
 
   // this is how you set up a background for a specific layer
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
+   pScope.draw_image("luckyCat" , x, y);
 
-  fill('#eae2b7');
-  arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
 
-  fill('#ffb703');
-  // rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
-  ellipse(-10, -300-animation.wave()*50,40,40);
-//   fill(214, 91, 9);
-//   // beginShape(); // flowerpot
-//   // point(-10, -300);
-//   // vertex(-10, -300-animation.wave()*50);
-//   strokeWeight(5);
-// point(-25, -320);
-// // point(68, 19);
-// // point(21, 17);
-// // point(32, 91);
-// strokeWeight(1);
+  // fill('#eae2b7');
+  // arc(x,y,800,800,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+
+  // fill('#ffb703');
+  // // rect(-10,-300-animation.wave()*50,20,20) // .wave is a cosine wave btw
+  // ellipse(-10, -300-animation.wave()*50,40,40);
+
+
+}
+
+function coins(x,y, animation, pScope){
+  pScope.draw_image("coin" , 0, 0);
 
 }
