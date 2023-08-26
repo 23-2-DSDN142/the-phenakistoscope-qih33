@@ -4,10 +4,11 @@ function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
   pScope.output_mode(ANIMATED_DISK);
   pScope.scale_for_screen(true);
-  pScope.draw_layer_boundaries(false);
+  pScope.draw_layer_boundaries(true);
+  pScope.draw_slits(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
-  pScope.load_image("coin", "png");
+  pScope.load_image("heart_circle", "png");
 }
 
 function setup_layers(pScope){
@@ -25,15 +26,15 @@ function setup_layers(pScope){
 
 function faces(x, y, animation, pScope){
 
-  pScope.draw_image("coin" , x, y);
+  // pScope.draw_image("coin" , x, y);
   
-  // scale(animation.frame*2);
+  scale(animation.frame*2);
 
-  // ellipse(0,0,50,50); // draw head
-  // fill(30);
-  // ellipse(-10,-10,10,10); //draw eye
-  // ellipse(10,-10,10,10); // draw eye
-  // arc(0,10,20,10,0,180); // draw mouth
+  ellipse(0,0,50,50); // draw head
+  fill(30);
+  ellipse(-10,-10,10,10); //draw eye
+  ellipse(10,-10,10,10); // draw eye
+  arc(0,10,20,10,0,180); // draw mouth
 
 }
 
