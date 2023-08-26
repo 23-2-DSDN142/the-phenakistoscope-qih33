@@ -26,7 +26,7 @@ function setup_layers(pScope){
 
 function faces(x, y, animation, pScope){
 
-  // pScope.draw_image("coin" , x, y);
+  pScope.draw_image("heart_circle" , x, y);
   
   scale(animation.frame*2);
 
