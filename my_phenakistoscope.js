@@ -1,4 +1,4 @@
-const SLICE_COUNT = 8;
+const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
@@ -15,11 +15,11 @@ function setup_pScope(pScope){
 
 function setup_layers(pScope){
 
-  new PLayer(null, 220);  //lets us draw the whole circle background, ignoring the boundaries
+  new PLayer(null, '#ff0054');  //lets us draw the whole circle background, ignoring the boundaries
 
   var layer1 = new PLayer(pig);
   layer1.mode( RING );
-  layer1.set_boundary( 200, 1000 );
+  layer1.set_boundary( 400, 800 );
 
   var layer2 = new PLayer(lucky_cats);
       layer2.mode( RING );
@@ -67,5 +67,6 @@ function coins(x,y, animation, pScope){
 }
 
 function pig(x,y, animation, pScope) {
-  pScope.draw_image("luckyCat" , 200, 800);
+  scale(animation.wave(0.5));
+  pScope.draw_image("pig" , 400, 800);
 }
