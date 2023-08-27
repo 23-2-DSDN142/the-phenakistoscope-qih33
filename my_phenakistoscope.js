@@ -54,16 +54,17 @@ function lucky_cats(x, y, animation, pScope){
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-   fill('#eae2b7');
-   arc(x,y,1000,1000,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-  scale(animation.wave(0.5));
+  //  fill('#eae2b7');
+  //  arc(x,y,1000,1000,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+  // scale(animation.wave(0.5));
    
   
-   pScope.draw_image("luckyCat" , 200, 400);
+  //  pScope.draw_image("luckyCat" , 200, 400);
    push()
    rotate(90 * animation.frame)
-   let rectJump = 750 + (animation.wave(1) * 50)
-   rect(150, rectJump, 100,100)
+   if(animation.frame == 0){
+    pScope.draw_image("luckyCat" , x, y);
+    }
    pop()
 
 }
