@@ -17,18 +17,22 @@ function setup_layers(pScope){
 
   new PLayer(null, '#ff0054');  //lets us draw the whole circle background, ignoring the boundaries
 
-  var piggy_bank = new PLayer(piggy_bank);
-  piggy_bank.mode( RING );
-  piggy_bank.set_boundary( 400, 800 );
+  var piggy = new PLayer(piggy_bank);
+      piggy.mode( RING );
+      piggy.set_boundary( 500, 800 );
 
   var cat = new PLayer(lucky_cats);
       cat.mode( RING );
       cat.set_boundary( 200, 200 );
 
-   var layer3 = new PLayer(coin);
+   var coin1 = new PLayer(coin);
   //  layer1.mode( SWIRL(5) );
   // layer1.set_boundary( 200, 1000 );
-}
+
+//   var coin2 = new Player(coins);
+//       coin2.mode( SWIRL(5) );
+//       coin2.set_boundary( 200, 800 );
+// }
 
 function faces(x, y, animation, pScope){
 
@@ -67,6 +71,12 @@ function coin(x,y, animation, pScope){
 }
 
 function piggy_bank(x,y, animation, pScope) {
-  scale(animation.wave(0.5));
-  pScope.draw_image("pig" , 400, 800);
+  scale(animation.wave(0.4));
+  pScope.draw_image("pig" , 500, 800);
+}
+
+function coins(x,y, animation, pScope){
+  scale(animation.frame*2);
+  fill('#ffb703');
+  ellipse(0,0,50,50);
 }
