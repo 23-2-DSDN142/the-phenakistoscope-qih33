@@ -10,16 +10,16 @@ function setup_pScope(pScope){
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
   pScope.load_image("luckyCat", "png");
-
+  pScope.load_image("pig", "png");
 }
 
 function setup_layers(pScope){
 
   new PLayer(null, 220);  //lets us draw the whole circle background, ignoring the boundaries
 
-  // var layer1 = new PLayer(faces);
-  // layer1.mode( SWIRL(5) );
-  // layer1.set_boundary( 200, 1000 );
+  var layer1 = new PLayer(pig);
+  layer1.mode( RING );
+  layer1.set_boundary( 200, 1000 );
 
   var layer2 = new PLayer(lucky_cats);
       layer2.mode( RING );
@@ -64,5 +64,8 @@ function lucky_cats(x, y, animation, pScope){
 
 function coins(x,y, animation, pScope){
   pScope.draw_image("coin" , 0, 0);
+}
 
+function pig(x,y, animation, pScope) {
+  pScope.draw_image("luckyCat" , 200, 800);
 }
