@@ -17,15 +17,15 @@ function setup_layers(pScope){
 
   new PLayer(null, '#ff0054');  //lets us draw the whole circle background, ignoring the boundaries
 
-  var layer1 = new PLayer(pig);
-  layer1.mode( RING );
-  layer1.set_boundary( 400, 800 );
+  var piggy_bank = new PLayer(piggy_bank);
+  piggy_bank.mode( RING );
+  piggy_bank.set_boundary( 400, 800 );
 
-  var layer2 = new PLayer(lucky_cats);
-      layer2.mode( RING );
-      layer2.set_boundary( 200, 200 );
+  var cat = new PLayer(lucky_cats);
+      cat.mode( RING );
+      cat.set_boundary( 200, 200 );
 
-   var layer3 = new PLayer(coins);
+   var layer3 = new PLayer(coin);
   //  layer1.mode( SWIRL(5) );
   // layer1.set_boundary( 200, 1000 );
 }
@@ -62,11 +62,11 @@ function lucky_cats(x, y, animation, pScope){
 
 }
 
-function coins(x,y, animation, pScope){
+function coin(x,y, animation, pScope){
   pScope.draw_image("coin" , 0, 0);
 }
 
-function pig(x,y, animation, pScope) {
+function piggy_bank(x,y, animation, pScope) {
   scale(animation.wave(0.5));
   pScope.draw_image("pig" , 400, 800);
 }
