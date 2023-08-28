@@ -17,7 +17,7 @@ function setup_pScope(pScope){
 
 function setup_layers(pScope){
 
-  new PLayer(null, '#a9def9');  //lets us draw the whole circle background, ignoring the boundaries
+  new PLayer(null, '#ef233c');  //lets us draw the whole circle background, ignoring the boundaries
  
   var piggy = new PLayer(piggy_bank);
       piggy.mode( RING );
@@ -69,8 +69,8 @@ function coin(x,y, animation, pScope){
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-   fill('#e4c1f9');
-   arc(x,y,200,200,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+  //  fill('#e4c1f9');
+  //  arc(x,y,200,200,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
   pScope.draw_image("coin" , 0, 0);
 }
 
@@ -78,7 +78,7 @@ function piggy_bank(x,y, animation, pScope) {
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-   fill('#ff99c8');
+   fill('#edf2f4');
    arc(x,y,1400,1400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
   scale(animation.wave(0.4));
   
