@@ -20,8 +20,8 @@ function setup_layers(pScope){
   new PLayer(null, '#ef233c');  //lets us draw the whole circle background, ignoring the boundaries
  
   var piggy = new PLayer(piggy_bank);
-      piggy.mode( RING );
-      piggy.set_boundary( 600, 1000 );
+      // piggy.mode( RING );
+      // piggy.set_boundary( 600, 1000 );
 
   
 
@@ -80,7 +80,7 @@ function piggy_bank(x,y, animation, pScope) {
   let backgroundArcEnd = 270 + angleOffset;
    fill('#edf2f4');
    arc(x,y,1400,1400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-  scale(animation.wave(0.4));
+  // scale(animation.wave(0.4));
   
   pScope.draw_image("pig" , 600, 700);
 }
