@@ -3,7 +3,7 @@ const SLICE_COUNT = 10;
 function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
   // pScope.output_mode(STATIC_FRAME);
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode( ANIMATED_DISK);
   
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
@@ -56,6 +56,7 @@ function setup_layers(pScope){
 // }
 
 function circles(x,y, animation, pScope){
+  scale(animation.frame*2);
   ellipse(0,15,100,100);
   ellipse(85, 15, 50, 50);
   fill('#d90429');
