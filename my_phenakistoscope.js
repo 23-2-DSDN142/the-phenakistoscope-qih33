@@ -12,7 +12,7 @@ function setup_pScope(pScope){
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
   pScope.load_image("pig", "png");
-  pScope.load_image_sequence("luckyCat", "png", 2);
+  pScope.load_image_sequence("luckyCat", "png", 3);
 }
 
 function setup_layers(pScope){
@@ -38,19 +38,7 @@ function setup_layers(pScope){
   // layer1.set_boundary( 200, 1000 );
 }
 
-// function faces(x, y, animation, pScope){
 
-//   // pScope.draw_image("coin" , x, y);
-  
-//   scale(animation.frame*2);
-
-//   ellipse(0,0,50,50); // draw head
-//   fill(30);
-//   ellipse(-10,-10,10,10); //draw eye
-//   ellipse(10,-10,10,10); // draw eye
-//   arc(0,10,20,10,0,180); // draw mouth
-
-// }
 
 function lucky_cats(x, y, animation, pScope){
   
@@ -79,10 +67,15 @@ function piggy_bank(x,y, animation, pScope) {
   scale(1)
 
   // let yValue = -750 - (animation.wave(1) *200);
+  let yValue = -750 - (animation.wave(1) *100);
   //console.log(yValue)
-  translate(0, -100) 
+  translate(0, yValue) 
   //rotate(180)
   pScope.draw_image("pig", 0, 0);
+  fill('#ffb703');
+  ellipse(-20,800,150,150);
+  // fill('#ffffff');
+  // rect(-10, -800, 20, 20);
 }
 
 function coins(x,y, animation, pScope){
