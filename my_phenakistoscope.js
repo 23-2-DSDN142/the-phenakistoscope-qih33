@@ -4,7 +4,7 @@ function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
   // pScope.output_mode(STATIC_FRAME);
   pScope.output_mode(ANIMATED_DISK);
-//  pScope.output_mode(ANIMATED_FRAME);
+  // pScope.output_mode(ANIMATED_FRAME);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
   pScope.draw_slits(false);
@@ -17,13 +17,17 @@ function setup_pScope(pScope){
 
 function setup_layers(pScope){
 
-  new PLayer(null, '#ef233c');  //lets us draw the whole circle background, ignoring the boundaries
+  new PLayer(null, '#f28482');  //lets us draw the whole circle background, ignoring the boundaries
+ 
+  let outerRing = new PLayer(outsideRing);
+  outerRing.mode(RING);
+  outerRing.set_boundary(970,1000);
+ 
  
   var piggy = new PLayer(piggy_bank);
-       piggy.mode( RING );
-     piggy.set_boundary( 600, 1000 );
+      piggy.mode( RING );
+      piggy.set_boundary( 600, 1000 );
 
-  
 
   var coin2 = new PLayer(coins);
       coin2.mode( SWIRL(8) );
@@ -51,8 +55,6 @@ function coin(x,y, animation, pScope){
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-  //  fill('#e4c1f9');
-  //  arc(x,y,200,200,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
   scale(1.5);
   pScope.draw_image("coin" , 0, 0);
 }
@@ -61,8 +63,10 @@ function piggy_bank(x,y, animation, pScope) {
   let angleOffset = (360 / SLICE_COUNT) / 2
   let backgroundArcStart = 270 - angleOffset;
   let backgroundArcEnd = 270 + angleOffset;
-   fill('#edf2f4');
+   fill('#f7ede2');
    arc(x,y,1400,1400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
+   fill('#ffb703');
+   ellipse(260,900,60,60);
  
   scale(1)
 
@@ -72,19 +76,23 @@ function piggy_bank(x,y, animation, pScope) {
   translate(0, yValue) 
   //rotate(180)
   pScope.draw_image("pig", 0, 0);
-  fill('#ffb703');
-  ellipse(-20,800,150,150);
+  // pScope.draw_image("pig", 100, 0);
+  // fill('#ffb703');
+  // ellipse(100,0,60,60);
   // fill('#ffffff');
   // rect(-10, -800, 20, 20);
 }
 
 function coins(x,y, animation, pScope){
- 
   scale(animation.frame);
-  
   fill('#ffb703');
   ellipse(0,15,50,50);
   fill('#ffffff');
   rect(-10, 5, 20, 20);
 
+}
+
+function outsideRing (x,y,animation,pScope){
+  // pScope.fill_background(249, 248,110, 255);
+  pScope.fill_background('#f6bd60');
 }
