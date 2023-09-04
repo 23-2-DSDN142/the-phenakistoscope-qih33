@@ -30,27 +30,27 @@ function setup_layers(pScope){
       coin2.set_boundary( 250, 700 );
 
   var cat = new PLayer(lucky_cats);
-      cat.mode( RING );
-      cat.set_boundary( 50, 200 );
+      // cat.mode( RING );
+       cat.set_boundary( 100, 250 );
 
    var coin1 = new PLayer(coin);
   //  layer1.mode( SWIRL(5) );
   // layer1.set_boundary( 200, 1000 );
 }
 
-function faces(x, y, animation, pScope){
+// function faces(x, y, animation, pScope){
 
-  // pScope.draw_image("coin" , x, y);
+//   // pScope.draw_image("coin" , x, y);
   
-  scale(animation.frame*2);
+//   scale(animation.frame*2);
 
-  ellipse(0,0,50,50); // draw head
-  fill(30);
-  ellipse(-10,-10,10,10); //draw eye
-  ellipse(10,-10,10,10); // draw eye
-  arc(0,10,20,10,0,180); // draw mouth
+//   ellipse(0,0,50,50); // draw head
+//   fill(30);
+//   ellipse(-10,-10,10,10); //draw eye
+//   ellipse(10,-10,10,10); // draw eye
+//   arc(0,10,20,10,0,180); // draw mouth
 
-}
+// }
 
 function lucky_cats(x, y, animation, pScope){
 
@@ -61,10 +61,10 @@ function lucky_cats(x, y, animation, pScope){
   // fill('#ffffff');
   //  arc(x,y,600,600,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
    //scale(animation.wave(0.5));
-   scale(2)
+   scale(1);
    //let xvalue = animation.frame * 50
    let xvalue = 0
-    pScope.draw_image("luckyCat" , xvalue, -150);
+    pScope.draw_image("luckyCat" , xvalue, -180);
 
 }
 
