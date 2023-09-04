@@ -1,4 +1,4 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT = 6;
 
 function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
@@ -11,8 +11,8 @@ function setup_pScope(pScope){
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
-  pScope.load_image("luckyCat", "png");
   pScope.load_image("pig", "png");
+  pScope.draw_image_from_sequence("luckyCat", "png", 2);
 }
 
 function setup_layers(pScope){
@@ -61,11 +61,11 @@ function lucky_cats(x, y, animation, pScope){
   // fill('#ffffff');
   //  arc(x,y,600,600,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
    //scale(animation.wave(0.5));
-   scale(1);
+   scale(0.8);
    //let xvalue = animation.frame * 50
    let xvalue = 0
-    pScope.draw_image("luckyCat" , xvalue, -180);
-
+    // pScope.draw_image("luckyCat" , xvalue, -180);
+    pScope.draw_image_from_sequence("luckyCat", xvalue, -180, animation.frame);
 }
 
 function coin(x,y, animation, pScope){
