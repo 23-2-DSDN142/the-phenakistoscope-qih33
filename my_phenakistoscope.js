@@ -1,4 +1,4 @@
-const SLICE_COUNT = 6;
+const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
     // pScope.output_mode(OUTPUT_GIF(1000));
@@ -12,7 +12,7 @@ function setup_pScope(pScope){
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
   pScope.load_image("pig", "png");
-  pScope.draw_image_from_sequence("luckyCat", "png", 2);
+  pScope.load_image_sequence("luckyCat", "png", 2);
 }
 
 function setup_layers(pScope){
@@ -53,19 +53,10 @@ function setup_layers(pScope){
 // }
 
 function lucky_cats(x, y, animation, pScope){
-
-  // this is how you set up a background for a specific layer
-  let angleOffset = (360 / SLICE_COUNT) / 2
-  let backgroundArcStart = 270 - angleOffset;
-  let backgroundArcEnd = 270 + angleOffset;
-  // fill('#ffffff');
-  //  arc(x,y,600,600,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-   //scale(animation.wave(0.5));
-   scale(0.8);
-   //let xvalue = animation.frame * 50
-   let xvalue = 0
-    // pScope.draw_image("luckyCat" , xvalue, -180);
-    pScope.draw_image_from_sequence("luckyCat", xvalue, -180, animation.frame);
+  
+    scale(1);
+    let xvalue = 0
+    pScope.draw_image_from_sequence("luckyCat", xvalue, -250, animation.frame);
 }
 
 function coin(x,y, animation, pScope){
@@ -74,7 +65,7 @@ function coin(x,y, animation, pScope){
   let backgroundArcEnd = 270 + angleOffset;
   //  fill('#e4c1f9');
   //  arc(x,y,200,200,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-  
+  scale(1.5);
   pScope.draw_image("coin" , 0, 0);
 }
 
@@ -84,22 +75,18 @@ function piggy_bank(x,y, animation, pScope) {
   let backgroundArcEnd = 270 + angleOffset;
    fill('#edf2f4');
    arc(x,y,1400,1400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-  //scale(animation.wave(0.4));
  
   scale(1)
 
-  let yValue = -750 - (animation.wave(1) *200);
+  // let yValue = -750 - (animation.wave(1) *200);
   //console.log(yValue)
-  translate(0, yValue) 
+  translate(0, -100) 
   //rotate(180)
   pScope.draw_image("pig", 0, 0);
 }
 
 function coins(x,y, animation, pScope){
-  let angleOffset = (360 / SLICE_COUNT) / 2
-  let backgroundArcStart = 270 - angleOffset;
-  let backgroundArcEnd = 270 + angleOffset;
-   // draws "pizza
+ 
   scale(animation.frame);
   
   fill('#ffb703');
