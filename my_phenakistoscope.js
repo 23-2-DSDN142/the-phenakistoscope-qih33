@@ -23,7 +23,10 @@ function setup_layers(pScope){
   outerRing.mode(RING);
   outerRing.set_boundary(970,1000);
  
- 
+  var outerCircle = new PLayer(circles);
+  outerCircle.mode(RING);
+  outerCircle.set_boundary( 0, 950 );
+
   var piggy = new PLayer(piggy_bank);
       piggy.mode( RING );
       piggy.set_boundary( 600, 1000 );
@@ -65,8 +68,8 @@ function piggy_bank(x,y, animation, pScope) {
   let backgroundArcEnd = 270 + angleOffset;
    fill('#f7ede2');
    arc(x,y,1400,1400,backgroundArcStart,backgroundArcEnd); // draws "pizza slice" in the background
-   fill('#ffb703');
-   ellipse(260,900,60,60);
+  //  fill('#ffb703');
+  //  ellipse(260,900,60,60);
  
   scale(1)
 
@@ -76,11 +79,15 @@ function piggy_bank(x,y, animation, pScope) {
   translate(0, yValue) 
   //rotate(180)
   pScope.draw_image("pig", 0, 0);
-  // pScope.draw_image("pig", 100, 0);
-  // fill('#ffb703');
-  // ellipse(100,0,60,60);
-  // fill('#ffffff');
-  // rect(-10, -800, 20, 20);
+}
+
+function circles(x,y, animation, pScope){
+  fill('#ffb703');
+  let ballSize  = 100 + (animation.wave(1)* 20);
+  let bouce = 50* animation.wave();
+   ellipse(260, 850+bouce ,60); 
+   fill('#ffffff');
+   rect(246, 840+bouce, 25, 25);
 }
 
 function coins(x,y, animation, pScope){
