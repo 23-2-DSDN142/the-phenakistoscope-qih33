@@ -12,7 +12,7 @@ function setup_pScope(pScope){
   pScope.set_slice_count(SLICE_COUNT);
   pScope.load_image("coin", "png");
   pScope.load_image("pig", "png");
-  pScope.load_image_sequence("luckyCat", "png", 3);
+  pScope.load_image_sequence("luckyCat", "png", 4);
 }
 
 function setup_layers(pScope){
