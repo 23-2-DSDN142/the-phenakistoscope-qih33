@@ -87,7 +87,7 @@ function circles(x,y, animation, pScope){
   let bouce = 50* animation.wave();
    ellipse(260, 850+bouce ,60); 
    fill('#ffffff');
-   rect(246, 840+bouce, 25, 25);
+   rect(245, 835+bouce, 30);
 }
 
 function coins(x,y, animation, pScope){
