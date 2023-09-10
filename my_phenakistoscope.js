@@ -1,7 +1,7 @@
 const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
-
+  // pScope.output_mode(STATIC_FRAME);
   pScope.output_mode(ANIMATED_DISK);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
@@ -45,7 +45,7 @@ function setup_layers(pScope){
 
 
 function lucky_cats(x, y, animation, pScope){
-   pScope.fill_background('#fefae0');
+   pScope.fill_background('#e76f51');
     scale(1);
     let xvalue = 0
     pScope.draw_image_from_sequence("luckyCat", xvalue, -250, animation.frame);
@@ -67,26 +67,23 @@ function golden_flog(x,y, animation, pScope) {
 }
 
 function lucky_bat(x,y, animation, pScope){
-  // fill('#ffb703');
-  // let ballSize  = 100 + (animation.wave(1)* 20);
-  // let bouce = 50* animation.wave();
-  //  ellipse(260, 850+bouce ,60); 
-  //  fill('#ffffff');
-  //  rect(245, 835+bouce, 30);
+  
   scale(1);
-
   let yValue = -750 - (animation.wave(1) *100);
-  //console.log(yValue)
   translate(0, yValue) 
-  //rotate(180)
   pScope.draw_image("bat", 245, 0);
 }
 
 function coins(x,y, animation, pScope){
   scale(animation.frame);
   fill('#ffb703');
-  ellipse(0,15,50,50);
+  angleMode(DEGREES);
+  arc(0,15,50,50, -65, 65, OPEN);
+  arc(0,15,50,50, 20, 155, OPEN);
+  arc(0,15,50,50, 115, 245, OPEN);
+  arc(0,15,50,50, 200, 335, OPEN);
   fill('#ffffff');
+  noFill();
   rect(-10, 5, 20, 20);
 
 }
