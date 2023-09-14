@@ -11,7 +11,7 @@ function setup_pScope(pScope){
   pScope.load_image("coin", "png");
   pScope.load_image("bat", "png");
   pScope.load_image_sequence("luckyCat", "png", 4);
-  pScope.load_image_sequence("flog", "png", 2);
+  pScope.load_image_sequence("frog", "png", 2);
 }
 
 function setup_layers(pScope){
@@ -26,9 +26,9 @@ function setup_layers(pScope){
   bat.mode(RING);
   bat.set_boundary( 0, 950 );
 
-  var flog = new PLayer(golden_flog);
-      flog.mode( RING );
-      flog.set_boundary( 600, 1000 );
+  var frog = new PLayer(golden_frog);
+      frog.mode( RING );
+      frog.set_boundary( 600, 1000 );
 
 
   var coin2 = new PLayer(coins);
@@ -58,10 +58,10 @@ function coin(x,y, animation, pScope){
   pScope.draw_image("coin" , 0, 0);
 }
 
-function golden_flog(x,y, animation, pScope) {
+function golden_frog(x,y, animation, pScope) {
   scale(1);
   let xvalue = 0
-  pScope.draw_image_from_sequence("flog", xvalue, -680, animation.frame);
+  pScope.draw_image_from_sequence("frog", xvalue, -680, animation.frame);
 
 }
 
