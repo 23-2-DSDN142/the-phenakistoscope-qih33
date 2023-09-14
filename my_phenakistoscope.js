@@ -1,9 +1,8 @@
 const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
-  // pScope.output_mode(STATIC_FRAME);
-  pScope.output_mode(OUTPUT_GIF(1000));
-  pScope.output_mode(ANIMATED_DISK);
+  // pScope.output_mode(OUTPUT_GIF(1000));
+  pScope.output_mode(OUTPUT_PRINT(A3));
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
   pScope.draw_slits(false);
@@ -37,7 +36,6 @@ function setup_layers(pScope){
       coin2.set_boundary( 250, 700 );
 
   var cat = new PLayer(lucky_cats);
-      // cat.mode( RING );
        cat.set_boundary( 100, 200 );
 
    var coin1 = new PLayer(coin);
